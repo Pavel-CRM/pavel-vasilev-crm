@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Павел Васильев — CRM-маркетолог, руководитель отдела маркетинга</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF8F4;
+    --warm-white: #FFFFFF;
+    --ink: #1A1815;
+    --ink-60: rgba(26,24,21,0.6);
+    --ink-30: rgba(26,24,21,0.3);
+    --ink-10: rgba(26,24,21,0.08);
+    --accent: #2D5BE3;
+    --accent-light: #EBF0FD;
+    --accent-dark: #1A3BA0;
+    --warm: #C4792A;
+    --warm-light: #FDF3E8;
+    --border: rgba(26,24,21,0.1);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px;
+    height: 64px;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(26,24,21,0.06); }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a {
+    font-size: 14px;
+    color: var(--ink-60);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    background: var(--ink) !important;
+    color: var(--cream) !important;
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; transform: translateY(-1px); }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
+  .full-bleed { max-width: none; padding-left: 0; padding-right: 0; }
+  .full-bleed > .inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── HERO ── */
+  #hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--warm);
+    background: var(--warm-light);
+    padding: 5px 14px; border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow span { width: 5px; height: 5px; border-radius: 50%; background: var(--warm); flex-shrink: 0; }
+  .hero-h1 {
+    font-family: var(--serif);
+    font-size: clamp(48px, 5.5vw, 72px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero-h1 em { font-style: italic; color: var(--accent); }
+  .hero-tagline {
+    font-size: 18px;
+    color: var(--ink-60);
+    line-height: 1.65;
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--ink);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--ink); background: var(--ink-10); transform: translateY(-2px); }
+  .hero-photo {
+    position: relative;
+  }
+  .hero-photo-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, #e8e2d8 0%, #d4cdc0 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+    color: var(--ink-30);
+  }
+  .photo-placeholder svg { width: 56px; height: 56px; opacity: 0.4; }
+  .photo-placeholder p { font-size: 13px; text-align: center; line-height: 1.4; }
+  .hero-badge {
+    position: absolute;
+    bottom: -16px; left: -20px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    box-shadow: 0 8px 30px rgba(26,24,21,0.08);
+  }
+  .hero-badge-num { font-family: var(--serif); font-size: 32px; font-weight: 300; color: var(--ink); line-height: 1; }
+  .hero-badge-label { font-size: 11px; color: var(--ink-60); margin-top: 3px; }
+
+  /* ── STATS ── */
+  #stats {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .stat-item {
+    background: var(--warm-white);
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .stat-num span { font-size: 28px; }
+  .stat-label { font-size: 13px; color: var(--ink-60); line-height: 1.4; }
+
+  /* ── EXPERTISE ── */
+  #expertise { padding-top: 80px; }
+  .section-header { margin-bottom: 56px; }
+  .section-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-30);
+    margin-bottom: 16px;
+  }
+  .section-h2 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 600px;
+  }
+  .section-h2 em { font-style: italic; color: var(--accent); }
+  .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .exp-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .exp-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(45,91,227,0.08);
+  }
+  .exp-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    font-size: 20px;
+  }
+  .exp-title { font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+  .exp-desc { font-size: 14px; color: var(--ink-60); line-height: 1.65; }
+
+  /* ── CASES ── */
+  #cases { padding-top: 80px; }
+  .cases-list { display: flex; flex-direction: column; gap: 2px; }
+  .case-item {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+  }
+  .case-item:hover { border-color: var(--ink-30); box-shadow: 0 4px 24px rgba(26,24,21,0.06); }
+  .case-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 10px; border-radius: 100px;
+    margin-bottom: 14px;
+  }
+  .case-title { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .case-desc { font-size: 15px; color: var(--ink-60); line-height: 1.65; max-width: 560px; }
+  .case-metrics { display: flex; flex-direction: column; gap: 16px; min-width: 160px; }
+  .metric { text-align: right; }
+  .metric-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
+  .metric-label { font-size: 12px; color: var(--ink-60); margin-top: 3px; }
+
+  /* ── BRANDS ── */
+  .brands-strip {
+    background: var(--warm-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 40px;
+    margin-top: 60px;
+  }
+  .brands-label { font-size: 12px; color: var(--ink-30); text-align: center; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+  .brands-logos {
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; flex-wrap: wrap;
+  }
+  .brand-logo {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--ink-30);
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+    cursor: default;
+  }
+  .brand-logo:hover { color: var(--ink-60); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { padding-top: 80px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .testimonial-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 80px;
+    line-height: 0.7;
+    color: var(--ink-10);
+    position: absolute;
+    top: 28px; left: 28px;
+  }
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 24px;
+    padding-top: 32px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: var(--serif);
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 14px; }
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 500; color: var(--accent);
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 14px; font-weight: 500; }
+  .author-role { font-size: 13px; color: var(--ink-60); margin-top: 2px; }
+
+  /* ── ABOUT ── */
+  #about {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-text { }
+  .about-p { font-size: 16px; color: var(--ink-60); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+  .about-p strong { color: var(--ink); font-weight: 500; }
+  .about-values { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+  .value-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-60); }
+  .value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .about-photo-wrap {
+    position: relative;
+  }
+  .about-photo {
+    width: 100%; aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #e4ddd2 0%, #cdc5b8 100%);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-30); font-size: 13px;
+    text-align: center; padding: 24px;
+  }
+  .about-quote-card {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    max-width: 240px;
+    box-shadow: 0 12px 40px rgba(26,24,21,0.15);
+  }
+  .about-quote-text { font-size: 14px; line-height: 1.5; font-style: italic; font-family: var(--serif); margin-bottom: 10px; }
+  .about-quote-author { font-size: 11px; color: rgba(250,248,244,0.6); }
+
+  /* ── BOOKING ── */
+  #booking {
+    padding-top: 80px; padding-bottom: 40px;
+  }
+  .booking-wrap {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .booking-info {
+    padding: 48px;
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .booking-h3 {
+    font-family: var(--serif);
+    font-size: 36px; font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .booking-h3 em { font-style: italic; color: #8BA7F8; }
+  .booking-desc { font-size: 15px; color: rgba(250,248,244,0.65); line-height: 1.7; margin-bottom: 36px; font-weight: 300; }
+  .booking-formats { display: flex; flex-direction: column; gap: 14px; }
+  .format-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(250,248,244,0.12);
+    background: rgba(250,248,244,0.05);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .format-item:hover { background: rgba(250,248,244,0.1); border-color: rgba(250,248,244,0.25); }
+  .format-item.active { background: rgba(139,167,248,0.2); border-color: #8BA7F8; }
+  .format-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .format-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+  .format-meta { font-size: 12px; color: rgba(250,248,244,0.5); }
+  .booking-form { padding: 48px; }
+  .form-title { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 6px; }
+  .form-subtitle { font-size: 14px; color: var(--ink-60); margin-bottom: 32px; }
+  .form-group { margin-bottom: 20px; }
+  .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--ink-60); margin-bottom: 7px; }
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(45,91,227,0.08);
+    background: white;
+  }
+  .form-input::placeholder { color: var(--ink-30); }
+  textarea.form-input { resize: vertical; min-height: 100px; }
+  select.form-input { cursor: pointer; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: var(--sans);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--accent); transform: translateY(-1px); }
+  .form-note { font-size: 12px; color: var(--ink-30); text-align: center; margin-top: 12px; }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .form-success-icon { font-size: 48px; margin-bottom: 16px; }
+  .form-success-title { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+  .form-success-text { font-size: 14px; color: var(--ink-60); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 60px 40px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 24px; font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .footer-tagline { font-size: 14px; color: var(--ink-60); }
+  .footer-links { display: flex; gap: 24px; justify-content: flex-end; flex-wrap: wrap; }
+  .footer-link {
+    font-size: 14px; color: var(--ink-60);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--ink); }
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--ink-30);
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 80px 20px; }
+    #hero { grid-template-columns: 1fr; gap: 40px; padding-top: 120px; min-height: auto; }
+    .hero-photo { order: -1; }
+    .hero-photo-frame { aspect-ratio: 4/3; }
+    .hero-badge { display: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .case-item { grid-template-columns: 1fr; gap: 20px; }
+    .case-metrics { flex-direction: row; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    #about { grid-template-columns: 1fr; gap: 40px; }
+    .about-quote-card { display: none; }
+    .booking-wrap { grid-template-columns: 1fr; }
+    .booking-info { padding: 32px 24px; }
+    .booking-form { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .footer-links { justify-content: flex-start; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .brands-logos { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Павел Васильев</a>
+  <div class="nav-links">
+    <a href="#expertise">Экспертиза</a>
+    <a href="#cases">Кейсы</a>
+    <a href="#testimonials">Отзывы</a>
+    <a href="#about">О себе</a>
+    <a href="#booking" class="nav-cta">Записаться</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content fade-up">
+    <div class="hero-eyebrow"><span></span>CRM-маркетолог · Head of Marketing</div>
+    <h1 class="hero-h1">
+      Помогаю бизнесу<br>говорить с клиентом<br>в <em>нужный момент</em>
+    </h1>
+    <p class="hero-tagline">
+      Более 15 лет в директ-маркетинге. Выстраиваю CRM-стратегии, автоматизирую коммуникации и помогаю командам расти. Опыт с аудиториями до 15 миллионов.
+    </p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Записаться на консультацию
+      </a>
+      <a href="#cases" class="btn-secondary">
+        Мои публикации →
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-photo fade-up" style="transition-delay:0.15s">
+    <div class="hero-photo-frame">
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+        <p>Замените на<br>ваше фото</p>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">15<span>+</span></div>
+      <div class="hero-badge-label">лет в маркетинге</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid fade-up">
+    <div class="stat-item">
+      <div class="stat-num">15<span>+</span></div>
+      <div class="stat-label">лет в директ- и CRM-маркетинге</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15М</div>
+      <div class="stat-label">максимальный размер базы в работе</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10<span>+</span></div>
+      <div class="stat-label">крупных брендов: Альфа-Банк, Аэрофлот, Renault</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">зон экспертизы: email, push, sms, автоматизация, стратегия</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-header fade-up">
+    <div class="section-tag">Экспертиза</div>
+    <h2 class="section-h2">С чем я <em>помогаю</em></h2>
+  </div>
+  <div class="expertise-grid">
+    <div class="exp-card fade-up">
+      <div class="exp-icon">📬</div>
+      <div class="exp-title">Email, SMS, Push — с нуля до результата</div>
+      <div class="exp-desc">Создаю и оптимизирую рассылки во всех каналах. Дизайн, тон коммуникации, мастер-шаблон, доставляемость. Умею не попасть в спам и выбраться из него.</div>
+    </div>
+    <div class="exp-card fade-up" style="transition-delay:0.08s">
+      <div class="exp-icon">⚙️</div>
+      <div class="exp-title">Автоматизация коммуникаций</div>
+      <div class="exp-desc">Строю триггерные цепочки на действия пользователя и по событию. Омниканальные сценарии в одном месте — для простоты работы и аналитики.</div>
+    </div>
+    <div class="exp-card fade-up" style="transition-delay:0.16s">
+      <div class="exp-icon">🗄️</div>
+      <div class="exp-title">Работа с базой</div>
+      <div class="exp-desc">Сбор, сегментация и обогащение базы данными. Опыт работы с аудиториями до 15 миллионов подписчиков. Правильная частота — без выгорания базы.</div>
+    </div>
+    <div class="exp-card fade-up">
+      <div class="exp-icon">🧪</div>
+      <div class="exp-title">A/Б-тестирования и аналитика</div>
+      <div class="exp-desc">Подготовка гипотез, поиск оптимальной частоты и лучшего предложения. Воронки, CJM, конверсии, retention, uplift — как считать и на что смотреть.</div>
+    </div>
+    <div class="exp-card fade-up" style="transition-delay:0.08s">
+      <div class="exp-icon">🗺️</div>
+      <div class="exp-title">Стратегия и карта коммуникаций</div>
+      <div class="exp-desc">Визуальная карта коммуникаций по всем каналам. Рекомендуемая частота, время и тон. Welcome-цепочки, которые помогают клиенту начать пользоваться сервисом.</div>
+    </div>
+    <div class="exp-card fade-up" style="transition-delay:0.16s">
+      <div class="exp-icon">🎓</div>
+      <div class="exp-title">Консультации и менторство</div>
+      <div class="exp-desc">Разбираю задачи по внедрению CRM, email-рассылкам, автоматизации, аналитике. Помогаю командам и специалистам расти — без менторских платформ и их комиссий.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES / PUBLICATIONS -->
+<section id="cases">
+  <div class="section-header fade-up">
+    <div class="section-tag">Публикации и исследования</div>
+    <h2 class="section-h2">Делюсь знаниями <em>публично</em></h2>
+  </div>
+  <div class="cases-list">
+    <a href="https://delovoymir.biz/chto-takoe-triggery-i-kak-ih-ispolzuyut-v-marketinge.html" target="_blank" class="case-item fade-up" style="text-decoration:none;color:inherit;">
+      <div>
+        <div class="case-tag">Деловой мир · Январь 2025</div>
+        <div class="case-title">Что такое триггеры и как их используют в маркетинге</div>
+        <div class="case-desc">Как подтолкнуть клиента к покупке? Почему одни предложения вызывают восторг, а другие остаются без внимания? Разбираю триггеры — тонкие механизмы, которые управляют эмоциями и решениями. Написано на основе опыта в Мокка (BNPL-сервис).</div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-num" style="font-size:24px;">8 832</div>
+          <div class="metric-label">просмотра статьи</div>
+        </div>
+        <div class="metric" style="margin-top:8px;">
+          <div style="font-size:13px;color:var(--accent);font-weight:500;">Читать →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://mailfit.com/blog/kommunikacii-bankov-i-finansovogo-sektora-2026" target="_blank" class="case-item fade-up" style="text-decoration:none;color:inherit;transition-delay:0.08s">
+      <div>
+        <div class="case-tag">Mailfit Journal · 2025</div>
+        <div class="case-title">Коммуникации банков и финансового сектора в 2026 году</div>
+        <div class="case-desc">Экспертный взгляд на тренды: от ценности вместо предложения до эмоционального интеллекта в банковских рассылках. Как выстраивать диалог, который удерживает клиента даже в турбулентной экономике.</div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-num" style="font-size:20px;">Fintech</div>
+          <div class="metric-label">экспертный материал</div>
+        </div>
+        <div class="metric" style="margin-top:8px;">
+          <div style="font-size:13px;color:var(--accent);font-weight:500;">Читать →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://mailfit.com/blog/bolshe-pisem-bolshe-prodazh" target="_blank" class="case-item fade-up" style="text-decoration:none;color:inherit;transition-delay:0.12s">
+      <div>
+        <div class="case-tag">Mailfit Journal · Исследование</div>
+        <div class="case-title">Больше писем — больше продаж?</div>
+        <div class="case-desc">Может ли ежедневная email-рассылка убить продажи? Провёл масштабный эксперимент и узнал, как ведут себя клиенты, если им каждый день писать письма. Результаты и выводы с реальными данными.</div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-num" style="font-size:20px;">A/B</div>
+          <div class="metric-label">эксперимент с данными</div>
+        </div>
+        <div class="metric" style="margin-top:8px;">
+          <div style="font-size:13px;color:var(--accent);font-weight:500;">Читать →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://secretmag.ru/survival/proshe-perestat-proizvodit-9-potryasenii-rossiiskogo-biznesa-v-2024-godu.htm" target="_blank" class="case-item fade-up" style="text-decoration:none;color:inherit;transition-delay:0.16s">
+      <div>
+        <div class="case-tag">Секрет Фирмы · Декабрь 2024</div>
+        <div class="case-title">9 потрясений российского бизнеса в 2024 году</div>
+        <div class="case-desc">Экспертный комментарий для «Секрета Фирмы» — одного из ведущих деловых изданий России. Ключевая ставка, кадровый голод, AI-трансформация и другие вызовы года глазами топ-менеджеров.</div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-num" style="font-size:20px;">СМИ</div>
+          <div class="metric-label">деловое издание</div>
+        </div>
+        <div class="metric" style="margin-top:8px;">
+          <div style="font-size:13px;color:var(--accent);font-weight:500;">Читать →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Brands -->
+  <div class="brands-strip fade-up">
+    <div class="brands-label">Работал с брендами</div>
+    <div class="brands-logos">
+      <div class="brand-logo">Альфа-Банк</div>
+      <div class="brand-logo">Аэрофлот</div>
+      <div class="brand-logo">Renault</div>
+      <div class="brand-logo">Мокка</div>
+      <div class="brand-logo">Fins</div>
+      <div class="brand-logo">и другие</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header fade-up">
+    <div class="section-tag">Отзывы</div>
+    <h2 class="section-h2">Что говорят <em>клиенты</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <p class="testimonial-text">Павел — один из немногих, кто умеет выстроить директ-маркетинг системно: от стратегии до конкретных писем. После консультации мы полностью переработали сегментацию и уже видим результат в метриках.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">ИФ</div>
+        <div>
+          <div class="author-name">Имя Фамилия</div>
+          <div class="author-role">Маркетинг-директор, Компания</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.08s">
+      <p class="testimonial-text">Консультировался по теме доставляемости и попадания в спам. Павел дал очень конкретные рекомендации — не теорию, а чёткий пошаговый план. Через месяц Open Rate вырос с 11% до 24%.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">АК</div>
+        <div>
+          <div class="author-name">Имя Фамилия</div>
+          <div class="author-role">CRM-специалист, Компания</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.12s">
+      <p class="testimonial-text">Прошли кураторство проекта на протяжении двух месяцев. Павел помог выстроить воронку коммуникаций с нуля — от сбора базы до автоматических триггеров. Очень структурно и по делу.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">ДП</div>
+        <div>
+          <div class="author-name">Имя Фамилия</div>
+          <div class="author-role">CEO, Стартап</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.20s">
+      <p class="testimonial-text">Разобрали за одну сессию всю аналитику рассылок — что считать, на что смотреть, как интерпретировать цифры. Впервые за год у меня появилось ощущение контроля над CRM-каналом.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">МТ</div>
+        <div>
+          <div class="author-name">Имя Фамилия</div>
+          <div class="author-role">Email-маркетолог, Агентство</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-text fade-up">
+    <div class="section-tag">О себе</div>
+    <h2 class="section-h2" style="margin-bottom: 28px;">CRM — это<br>про людей</h2>
+    <p class="about-p">
+      Более 15 лет занимаюсь директ-маркетингом: email, SMS, push, мессенджеры. Работал с брендами уровня <strong>Альфа-Банк, Аэрофлот, Renault</strong> и финтех-сервисами — от стратегии до конкретного письма.
+    </p>
+    <p class="about-p">
+      Убеждён: хорошая коммуникация — это не «красивая рассылка». Это когда клиент получает нужное сообщение в нужный момент и чувствует, что бизнес его понимает.
+    </p>
+    <p class="about-p">
+      Веду <strong>Telegram-канал «У точки роста 🦆»</strong> — пишу про CRM-маркетинг, коммуникации и точки роста в бизнесе. Публикуюсь в Деловом мире, Секрете Фирмы, Mailfit Journal.
+    </p>
+    <div class="about-values">
+      <div class="value-item"><span class="value-dot"></span>Когда клиент берёт кредит — он выбирает не деньги, а цель. Коммуникация должна быть про цель</div>
+      <div class="value-item"><span class="value-dot"></span>Триггеры работают даже тогда, когда ты знаешь, что это триггер</div>
+      <div class="value-item"><span class="value-dot"></span>Бизнес зарабатывает вдолгую, когда помогает клиенту выполнять его жизненные задачи</div>
+    </div>
+  </div>
+  <div class="about-photo-wrap fade-up" style="transition-delay:0.15s">
+    <div class="about-photo">
+      <div>
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" style="opacity:0.3;margin-bottom:12px;">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+        <p style="font-size:13px;line-height:1.5;">Замените на ваше фото<br>в неформальной обстановке</p>
+      </div>
+    </div>
+    <div class="about-quote-card">
+      <div class="about-quote-text">«Чтобы узнать, какую ценность видит клиент в продукте — надо поближе его узнать.»</div>
+      <div class="about-quote-author">— Павел Васильев, Mailfit Journal</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="section-header fade-up">
+    <div class="section-tag">Запись</div>
+    <h2 class="section-h2">Давайте работать <em>вместе</em></h2>
+  </div>
+  <div class="booking-wrap fade-up">
+    <div class="booking-info">
+      <h3 class="booking-h3">Выберите<br><em>формат</em><br>сессии</h3>
+      <p class="booking-desc">Прямая запись без комиссий площадок. Все форматы — онлайн, в удобное время.</p>
+      <div class="booking-formats">
+        <div class="format-item active" onclick="selectFormat(this, 'consult')">
+          <div class="format-icon">☕</div>
+          <div>
+            <div class="format-title">Бесплатная консультация</div>
+            <div class="format-meta">Знакомство · Онлайн</div>
+          </div>
+        </div>
+        <div class="format-item" onclick="selectFormat(this, 'crm')">
+          <div class="format-icon">📬</div>
+          <div>
+            <div class="format-title">CRM и email-рассылки</div>
+            <div class="format-meta">Стратегия, автоматизация, оптимизация</div>
+          </div>
+        </div>
+        <div class="format-item" onclick="selectFormat(this, 'audit')">
+          <div class="format-icon">🔍</div>
+          <div>
+            <div class="format-title">Аудит коммуникаций</div>
+            <div class="format-meta">Глубокий разбор текущего состояния</div>
+          </div>
+        </div>
+        <div class="format-item" onclick="selectFormat(this, 'curation')">
+          <div class="format-icon">🚀</div>
+          <div>
+            <div class="format-title">Кураторство проекта</div>
+            <div class="format-meta">Сопровождение на дистанции</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-form">
+      <div id="booking-form-wrap">
+        <h3 class="form-title">Оставьте заявку</h3>
+        <p class="form-subtitle">Я отвечу в течение 24 часов и предложу удобное время</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Имя</label>
+            <input type="text" class="form-input" placeholder="Ваше имя" id="f-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Телефон или Telegram</label>
+            <input type="text" class="form-input" placeholder="+7 999 или @username" id="f-contact">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="your@email.com" id="f-email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Формат</label>
+          <select class="form-input" id="f-format">
+            <option value="consult">Бесплатная консультация (знакомство)</option>
+            <option value="crm">CRM и email-рассылки</option>
+            <option value="audit">Аудит коммуникаций</option>
+            <option value="curation">Кураторство проекта</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Расскажите о вашем запросе</label>
+          <textarea class="form-input" id="f-message" placeholder="Кратко: кто вы, какую задачу хотите решить, что ожидаете от встречи"></textarea>
+        </div>
+
+        <button class="form-submit" onclick="submitForm()">Отправить заявку →</button>
+        <p class="form-note">Отвечаю в рабочие дни, обычно быстрее</p>
+      </div>
+
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">Заявка отправлена!</div>
+        <p class="form-success-text">Я получил ваше сообщение и отвечу<br>в течение 24 часов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Павел Васильев</div>
+    <div class="footer-tagline">CRM-маркетолог · Head of Marketing · Консультант</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://t.me/utochkirosta" class="footer-link" target="_blank">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      Telegram-канал
+    </a>
+    <a href="mailto:pavel.7crm@gmail.com" class="footer-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      pavel.7crm@gmail.com
+    </a>
+    <a href="tel:+79652508952" class="footer-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16l.42.92z"/></svg>
+      +7 (965) 250-89-52
+    </a>
+  </div>
+</footer>
+<div class="footer-bottom" style="max-width:1100px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);font-size:13px;color:rgba(26,24,21,0.3);">
+  <span>© 2025 Павел Васильев</span>
+  <span>Telegram: <a href="https://t.me/utochkirosta" target="_blank" style="color:inherit;">@utochkirosta</a></span>
+</div>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Format selector
+  function selectFormat(el, format) {
+    document.querySelectorAll('.format-item').forEach(f => f.classList.remove('active'));
+    el.classList.add('active');
+    const select = document.getElementById('f-format');
+    if (select) select.value = format;
+  }
+
+  // Form submit (demo)
+  function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const contact = document.getElementById('f-contact').value.trim();
+    if (!name || !contact) {
+      document.getElementById('f-name').style.borderColor = name ? 'var(--border)' : '#E24B4A';
+      document.getElementById('f-contact').style.borderColor = contact ? 'var(--border)' : '#E24B4A';
+      return;
+    }
+    document.getElementById('booking-form-wrap').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  // Smooth stats counter animation
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const duration = 1200;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      statsObserver.disconnect();
+      setTimeout(() => {
+        animateCount(document.querySelector('.stat-item:nth-child(1) .stat-num'), 15, '+');
+      }, 200);
+    }
+  }, { threshold: 0.3 });
+  const statsSection = document.querySelector('.stats-grid');
+  if (statsSection) statsObserver.observe(statsSection);
+</script>
+</body>
+</html>
