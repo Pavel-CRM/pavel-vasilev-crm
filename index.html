@@ -931,7 +931,7 @@
           <textarea class="form-input" id="f-message" placeholder="Кратко: кто вы, какую задачу хотите решить, что ожидаете от встречи"></textarea>
         </div>
 
-        <button class="form-submit" onclick="submitForm()">Отправить заявку →</button>
+        <button class="form-submit" id="form-submit-btn" onclick="submitForm()">Отправить заявку →</button>
         <p class="form-note">Отвечаю в рабочие дни, обычно быстрее</p>
       </div>
 
@@ -971,6 +971,8 @@
 </div>
 
 <script>
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwUaVSd9Dq5WsHidld6lvTubfXCOUBDBsXDgKPNcyr5xFRJsy8uVuy0_rNX9cKvArv0/exec';
+
   // Navbar scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -991,17 +993,54 @@
     if (select) select.value = format;
   }
 
-  // Form submit (demo)
-  function submitForm() {
-    const name = document.getElementById('f-name').value.trim();
-    const contact = document.getElementById('f-contact').value.trim();
+  // Form submit
+  async function submitForm() {
+    const nameInput = document.getElementById('f-name');
+    const contactInput = document.getElementById('f-contact');
+    const emailInput = document.getElementById('f-email');
+    const formatInput = document.getElementById('f-format');
+    const messageInput = document.getElementById('f-message');
+    const submitBtn = document.getElementById('form-submit-btn');
+    const name = nameInput.value.trim();
+    const contact = contactInput.value.trim();
     if (!name || !contact) {
-      document.getElementById('f-name').style.borderColor = name ? 'var(--border)' : '#E24B4A';
-      document.getElementById('f-contact').style.borderColor = contact ? 'var(--border)' : '#E24B4A';
+      nameInput.style.borderColor = name ? 'var(--border)' : '#E24B4A';
+      contactInput.style.borderColor = contact ? 'var(--border)' : '#E24B4A';
       return;
     }
-    document.getElementById('booking-form-wrap').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+    nameInput.style.borderColor = 'var(--border)';
+    contactInput.style.borderColor = 'var(--border)';
+
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем...';
+
+    const params = new URLSearchParams({
+      name,
+      contact,
+      email: emailInput.value.trim(),
+      format: formatInput.value,
+      message: messageInput.value.trim(),
+      page: window.location.href,
+      source: 'github-pages-site',
+      userAgent: navigator.userAgent
+    });
+
+    try {
+      const response = await fetch(`${FORM_ENDPOINT}?${params.toString()}`, {
+        method: 'GET'
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      document.getElementById('booking-form-wrap').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } catch (error) {
+      console.error(error);
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert('Не удалось отправить заявку. Напишите мне в Telegram: @utochkirosta');
+    }
   }
 
   // Smooth stats counter animation
