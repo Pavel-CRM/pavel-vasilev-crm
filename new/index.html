@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Павел Васильев — Head of CRM</title>
+<meta name="description" content="Head of CRM в Мокка. С 2013 года в CRM и директ-маркетинге: базы 20+ млн контактов, четыре рынка, аплифт каждой цепочки и ИИ-автоматизация рутины. Консультации и менторство.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Павел Васильев — Head of CRM">
+<meta property="og:description" content="Строю CRM, которую можно посчитать в деньгах. Консультации, аудит рассылок, менторство.">
+<meta property="og:image" content="https://pavel-crm.github.io/pavel-vasilev-crm/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,300&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAF8F4;
+    --card: #FFFFFF;
+    --ink: #1A1815;
+    --ink-70: rgba(26,24,21,0.72);
+    --ink-50: rgba(26,24,21,0.52);
+    --line: rgba(26,24,21,0.12);
+    --blue: #2D5BE3;
+    --blue-soft: #EBF0FD;
+    --serif: 'Literata', Georgia, serif;
+    --sans: 'Onest', system-ui, sans-serif;
+    --wrap: 1120px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 40px; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(250,248,244,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+  .nav-name { font-family: var(--serif); font-size: 19px; text-decoration: none; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 14px; color: var(--ink-70); text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.btn-dark { color: var(--paper); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 100px; padding: 13px 24px; font: 500 15px/1 var(--sans); text-decoration: none; border: 1px solid var(--ink); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+  .btn-dark { background: var(--ink); color: var(--paper); }
+  .btn-dark:hover { background: var(--blue); border-color: var(--blue); }
+  .btn-light { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-light:hover { border-color: var(--ink); }
+  .btn-sm { padding: 9px 18px; font-size: 13px; }
+
+  /* hero */
+  .hero { padding: 72px 0 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
+  .hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(38px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.02em; max-width: 15ch; }
+  .hero-lead { margin-top: 28px; font-size: 18px; color: var(--ink-70); max-width: 34em; }
+  .hero-lead strong { color: var(--ink); font-weight: 500; }
+  .hero-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-photo { border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; background: #ddd; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+
+  /* lifecycle — the signature */
+  .cycle { margin-top: 72px; padding: 40px 0 36px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cycle-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 36px; }
+  .cycle-head h2 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; }
+  .cycle-head p { font-size: 14px; color: var(--ink-50); max-width: 30em; text-align: right; }
+  .cycle-scroll { overflow-x: auto; scrollbar-width: none; }
+  .cycle-scroll::-webkit-scrollbar { display: none; }
+  .cycle-track { list-style: none; display: grid; grid-template-columns: repeat(8, 1fr); position: relative; min-width: 820px; }
+  .cycle-track::before { content: ""; position: absolute; left: 6%; right: 6%; top: 58px; height: 1px; background: var(--ink-50); }
+  .cycle-pulse { position: absolute; top: 53px; left: 6%; width: 11px; height: 11px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 6px rgba(45,91,227,0.15); animation: travel 5.6s cubic-bezier(.45,0,.25,1) .4s both; }
+  @keyframes travel { from { left: 6%; } to { left: calc(94% - 11px); } }
+  .stage { position: relative; text-align: center; padding: 0 6px; }
+  .stage-msg { height: 40px; display: flex; align-items: flex-end; justify-content: center; font-size: 12.5px; line-height: 1.25; color: var(--blue); font-weight: 500; }
+  .stage-dot { width: 13px; height: 13px; margin: 12px auto 14px; border-radius: 50%; background: var(--paper); border: 1.5px solid var(--ink); position: relative; z-index: 1; animation: lit .5s ease both; }
+  .stage:nth-child(1) .stage-dot { animation-delay: .5s; } .stage:nth-child(2) .stage-dot { animation-delay: 1.2s; }
+  .stage:nth-child(3) .stage-dot { animation-delay: 1.9s; } .stage:nth-child(4) .stage-dot { animation-delay: 2.6s; }
+  .stage:nth-child(5) .stage-dot { animation-delay: 3.3s; } .stage:nth-child(6) .stage-dot { animation-delay: 4s; }
+  .stage:nth-child(7) .stage-dot { animation-delay: 4.7s; } .stage:nth-child(8) .stage-dot { animation-delay: 5.4s; }
+  @keyframes lit { to { background: var(--blue); border-color: var(--blue); } }
+  .stage-name { font-size: 14px; font-weight: 500; line-height: 1.3; }
+  .stage-when { font-size: 12.5px; color: var(--ink-50); margin-top: 2px; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 40px; border-top: 1px solid var(--line); }
+  .fact { padding: 22px 24px 0 0; }
+  .fact + .fact { padding-left: 24px; border-left: 1px solid var(--line); }
+  .fact b { display: block; font-family: var(--serif); font-weight: 400; font-size: 30px; letter-spacing: -0.02em; line-height: 1.1; }
+  .fact span { display: block; font-size: 14px; color: var(--ink-70); margin-top: 6px; line-height: 1.45; }
+
+  /* sections */
+  .sec { padding: 112px 0 0; }
+  .sec-h { font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 4vw, 46px); line-height: 1.1; letter-spacing: -0.02em; max-width: 18ch; }
+  .sec-sub { margin-top: 14px; color: var(--ink-70); max-width: 38em; }
+
+  /* cases */
+  .case { display: grid; grid-template-columns: 1fr 360px; gap: 56px; padding: 48px 0; border-bottom: 1px solid var(--line); }
+  .cases { margin-top: 40px; border-top: 1px solid var(--line); }
+  .case h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; max-width: 26ch; }
+  .case dl { margin-top: 24px; display: grid; grid-template-columns: 130px 1fr; gap: 14px 24px; }
+  .case dt { font-size: 14px; color: var(--ink-50); padding-top: 2px; }
+  .case dd { color: var(--ink-70); max-width: 38em; }
+  .case dd strong { color: var(--ink); font-weight: 500; }
+  .case-link { display: inline-block; margin-top: 24px; font-size: 15px; font-weight: 500; color: var(--blue); text-underline-offset: 4px; }
+  .case-aside { align-self: start; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+  .case-aside figcaption { font-size: 13px; color: var(--ink-50); margin-top: 12px; line-height: 1.45; }
+  .result { font-family: var(--serif); font-weight: 300; font-size: 44px; line-height: 1; letter-spacing: -0.03em; }
+  .result-label { font-size: 14px; color: var(--ink-70); margin: 8px 0 20px; }
+  .chart text { font-family: var(--sans); font-size: 11px; fill: rgba(26,24,21,0.6); }
+  .chart .v { font-size: 12px; fill: var(--ink); font-weight: 500; }
+  .chart .vb { fill: var(--blue); }
+  .bars { display: grid; gap: 10px; }
+  .bar-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 13px; color: var(--ink-70); }
+  .bar { grid-column: 1 / -1; height: 10px; border-radius: 5px; background: var(--ink); }
+  .bar.after { background: var(--blue); }
+  .aside-photo { border-radius: 12px; overflow: hidden; margin: 20px -8px 0; aspect-ratio: 16/10; }
+  .aside-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+
+  /* experience */
+  .jobs { margin-top: 40px; border-top: 1px solid var(--line); }
+  .job { display: grid; grid-template-columns: 170px 220px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .job-years { font-size: 14px; color: var(--ink-50); padding-top: 4px; }
+  .job-co { font-family: var(--serif); font-size: 22px; line-height: 1.2; }
+  .job-role { font-size: 14px; color: var(--ink-70); margin-top: 4px; }
+  .job p { color: var(--ink-70); max-width: 40em; }
+
+  /* help */
+  .help { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; margin-top: 40px; border-top: 1px solid var(--line); }
+  .help-item { padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .help-item h3 { font-size: 18px; font-weight: 500; }
+  .help-item p { color: var(--ink-70); margin-top: 6px; }
+  .help-note { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 24px 28px; background: var(--blue-soft); border-radius: 16px; }
+  .help-note p { font-size: 16px; max-width: 40em; }
+
+  /* publications */
+  .pubs { margin-top: 40px; border-top: 1px solid var(--line); list-style: none; }
+  .pub a { display: grid; grid-template-columns: 110px 190px 1fr auto; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+  .pub a:hover .pub-title { color: var(--blue); }
+  .pub-date { font-size: 14px; color: var(--ink-50); }
+  .pub-where { font-size: 14px; color: var(--ink-70); }
+  .pub-title { font-family: var(--serif); font-size: 20px; line-height: 1.3; transition: color .2s; }
+  .pub-kind { font-size: 13px; color: var(--ink-50); white-space: nowrap; }
+
+  /* about */
+  .about { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: center; }
+  .about-photo { border-radius: 24px; overflow: hidden; aspect-ratio: 1/1; }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .about blockquote { font-family: var(--serif); font-weight: 300; font-size: clamp(26px, 3vw, 34px); line-height: 1.25; letter-spacing: -0.015em; }
+  .about p { color: var(--ink-70); margin-top: 22px; max-width: 36em; }
+
+  /* contact */
+  .contact { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0; margin-top: 40px; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: var(--card); }
+  .contact-direct { background: var(--ink); color: var(--paper); padding: 44px 40px; display: flex; flex-direction: column; gap: 28px; }
+  .contact-direct h3 { font-family: var(--serif); font-weight: 300; font-size: 28px; line-height: 1.2; }
+  .contact-direct p { color: rgba(250,248,244,0.7); font-size: 15px; }
+  .direct-list { list-style: none; display: grid; gap: 18px; }
+  .direct-list span { display: block; font-size: 13px; color: rgba(250,248,244,0.55); }
+  .direct-list a { font-size: 18px; text-decoration: none; border-bottom: 1px solid rgba(250,248,244,0.3); }
+  .direct-list a:hover { border-color: var(--paper); }
+  form { padding: 44px 40px; display: grid; gap: 18px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label.f { display: grid; gap: 6px; font-size: 13px; color: var(--ink-70); }
+  .f input, .f select, .f textarea { font: 15px/1.4 var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; width: 100%; }
+  .f textarea { min-height: 110px; resize: vertical; }
+  .f input:focus, .f select:focus, .f textarea:focus { border-color: var(--blue); outline: none; }
+  .f .err { border-color: #C8322F; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--ink-70); line-height: 1.45; }
+  .consent input { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--blue); flex-shrink: 0; }
+  .consent.err { color: #C8322F; }
+  .form-btn { justify-content: center; }
+  .form-done { display: none; padding: 44px 40px; align-self: center; }
+  .form-done h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; }
+  .form-done p { color: var(--ink-70); margin-top: 8px; }
+
+  footer { margin-top: 112px; border-top: 1px solid var(--line); padding: 32px 0 40px; font-size: 14px; color: var(--ink-50); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer nav { display: flex; gap: 24px; flex-wrap: wrap; }
+  footer a { text-decoration: none; color: var(--ink-70); }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .wrap { padding: 0 20px; }
+    .nav-links a:not(.btn) { display: none; }
+    .hero { padding-top: 32px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-photo { order: -1; aspect-ratio: 4/3; }
+    .hero-lead { font-size: 17px; }
+    .cycle { margin-top: 56px; }
+    .cycle-head { flex-direction: column; gap: 8px; }
+    .cycle-head p { text-align: left; }
+    .cycle-track { min-width: 0; grid-template-columns: 1fr; gap: 0; }
+    .cycle-track::before { left: 6px; right: auto; top: 10px; bottom: 34px; width: 1px; height: auto; }
+    .cycle-pulse { display: none; }
+    .stage { display: grid; grid-template-columns: 13px 1fr auto; gap: 0 14px; align-items: start; text-align: left; padding: 0 0 18px; }
+    .stage-dot { grid-row: 1 / span 2; grid-column: 1; margin: 4px 0 0; }
+    .stage-name { grid-column: 2; }
+    .stage-when { grid-column: 2; }
+    .stage-msg { grid-column: 3; grid-row: 1 / span 2; height: auto; justify-content: flex-end; text-align: right; max-width: 150px; padding-top: 2px; }
+    .stage:last-child { padding-bottom: 0; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .fact { padding: 20px 16px 20px 0; }
+    .fact + .fact { padding-left: 0; border-left: 0; }
+    .fact:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+    .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .sec { padding-top: 80px; }
+    .case { grid-template-columns: 1fr; gap: 28px; padding: 36px 0; }
+    .case dl { grid-template-columns: 1fr; gap: 4px; }
+    .case dd + dt { margin-top: 12px; }
+    .job { grid-template-columns: 1fr; gap: 6px; }
+    .help { grid-template-columns: 1fr; }
+    .pub a { grid-template-columns: 1fr auto; gap: 4px 16px; }
+    .pub-date { grid-row: 1; }
+    .pub-where { grid-row: 1; grid-column: 2; text-align: right; }
+    .pub-title { grid-column: 1 / -1; }
+    .pub-kind { grid-column: 1 / -1; }
+    .about { grid-template-columns: 1fr; gap: 32px; }
+    .about-photo { aspect-ratio: 4/3; }
+    .contact { grid-template-columns: 1fr; }
+    .contact-direct, form, .form-done { padding: 32px 24px; }
+    .row2 { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cycle-pulse { animation: none; left: calc(94% - 11px); }
+    .stage-dot { animation: none; background: var(--blue); border-color: var(--blue); }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="nav-name">Павел Васильев</a>
+    <nav class="nav-links" aria-label="Разделы">
+      <a href="#cases">Кейсы</a>
+      <a href="#experience">Опыт</a>
+      <a href="#help">Консультации</a>
+      <a href="#publications">Публикации</a>
+      <a href="#contact" class="btn btn-dark btn-sm">Связаться</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Строю CRM, которую можно посчитать в&nbsp;деньгах</h1>
+          <p class="hero-lead"><strong>Head of CRM в&nbsp;Мокка.</strong> С&nbsp;2013 года в&nbsp;CRM и&nbsp;директ-маркетинге. Веду коммуникации четырёх рынков и&nbsp;базы 20+&nbsp;млн контактов, считаю аплифт каждой цепочки и&nbsp;убираю рутину из&nbsp;работы команды с&nbsp;помощью ИИ.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-dark">Обсудить задачу</a>
+            <a href="https://t.me/vasilevp" target="_blank" rel="noopener" class="btn btn-light">Написать в&nbsp;Telegram</a>
+          </div>
+        </div>
+        <div class="hero-photo"><img src="../pavel-portrait-2026.jpg" alt="Павел Васильев" width="853" height="1280"></div>
+      </div>
+
+      <div class="cycle">
+        <div class="cycle-head">
+          <h2>Нужное сообщение на&nbsp;каждом этапе жизни клиента</h2>
+          <p>Так устроена CRM, которую я строю: у&nbsp;каждого этапа своя цель и&nbsp;своя цепочка, а&nbsp;эффект каждой цепочки измерен через контрольную группу.</p>
+        </div>
+        <div class="cycle-scroll">
+          <ol class="cycle-track">
+            <li class="stage"><div class="stage-msg">Первая покупка</div><div class="stage-dot"></div><div class="stage-name">Одобрен</div><div class="stage-when">ещё не купил</div></li>
+            <li class="stage"><div class="stage-msg">Онбординг</div><div class="stage-dot"></div><div class="stage-name">Новый клиент</div><div class="stage-when">первые 60 дней</div></li>
+            <li class="stage"><div class="stage-msg">Вторая покупка</div><div class="stage-dot"></div><div class="stage-name">Готов к&nbsp;повтору</div><div class="stage-when">доступна новая сделка</div></li>
+            <li class="stage"><div class="stage-msg">Удержание</div><div class="stage-dot"></div><div class="stage-name">Постоянный</div><div class="stage-when">активный клиент</div></li>
+            <li class="stage"><div class="stage-msg"></div><div class="stage-dot"></div><div class="stage-name">Пауза</div><div class="stage-when">до 4 месяцев</div></li>
+            <li class="stage"><div class="stage-msg">Реактивация, пока горячо</div><div class="stage-dot"></div><div class="stage-name">Остывает</div><div class="stage-when">4–6 месяцев</div></li>
+            <li class="stage"><div class="stage-msg">Реактивация со&nbsp;стимулом</div><div class="stage-dot"></div><div class="stage-name">Спит</div><div class="stage-when">6–12 месяцев</div></li>
+            <li class="stage"><div class="stage-msg">Спецпредложение</div><div class="stage-dot"></div><div class="stage-name">Глубокий сон</div><div class="stage-when">больше года</div></li>
+            <span class="cycle-pulse" aria-hidden="true"></span>
+          </ol>
+        </div>
+        <div class="facts">
+          <div class="fact"><b>20+ млн</b><span>контактов в&nbsp;базе</span></div>
+          <div class="fact"><b>4 рынка</b><span>Россия, Польша, Румыния, Болгария</span></div>
+          <div class="fact"><b>10–15%</b><span>выручки компании приносит CRM по&nbsp;посчитанным аплифтам</span></div>
+          <div class="fact"><b>25+</b><span>автоматических сценариев с&nbsp;доказанным эффектом</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cases">
+    <div class="wrap">
+      <h2 class="sec-h">Три задачи, которые я&nbsp;решил</h2>
+      <div class="cases">
+
+        <article class="case">
+          <div>
+            <h3>Переезд платформы за&nbsp;12&nbsp;часов и&nbsp;возврат во&nbsp;«Входящие» Gmail</h3>
+            <dl>
+              <dt>Задача</dt>
+              <dd>Вендор CRM-платформы отключил Мокку с&nbsp;уведомлением за&nbsp;12 часов. Рассылки нужно было перенести, не&nbsp;потеряв ни&nbsp;клиентов, ни&nbsp;доставляемость.</dd>
+              <dt>Что сделал</dt>
+              <dd>Перенёс рассылки, сегменты и&nbsp;интеграции на&nbsp;Mindbox и&nbsp;Maestra: Россию за&nbsp;3 месяца, Румынию за&nbsp;1,5. Новые IP-адреса Gmail воспринял как незнакомого отправителя, и&nbsp;open rate упал до&nbsp;2%. Выделенные IP не&nbsp;помогли. Сработал медленный прогрев: несколько сотен писем в&nbsp;день и&nbsp;только активным подписчикам.</dd>
+              <dt>Результат</dt>
+              <dd><strong>Open rate в&nbsp;Gmail вырос с&nbsp;2% до&nbsp;24%</strong>, письма вернулись в&nbsp;основную папку «Входящие».</dd>
+            </dl>
+            <a class="case-link" href="https://mindbox.ru/journal/cases/mokka/" target="_blank" rel="noopener">Кейс в&nbsp;журнале Mindbox</a>
+          </div>
+          <figure class="case-aside">
+            <div class="result">2% → 24%</div>
+            <div class="result-label">open rate в Gmail</div>
+            <svg class="chart" viewBox="0 0 312 150" role="img" aria-label="Open rate в Gmail: 10% до переезда, 2% после, 4–5% на выделенных IP, 24% после прогрева">
+              <line x1="0" y1="124" x2="312" y2="124" stroke="rgba(26,24,21,0.15)"/>
+              <polyline points="24,82 112,114 200,103 288,20" fill="none" stroke="#1A1815" stroke-width="1.5"/>
+              <line x1="200" y1="103" x2="288" y2="20" stroke="#2D5BE3" stroke-width="2.5"/>
+              <circle cx="24" cy="82" r="4" fill="#1A1815"/><circle cx="112" cy="114" r="4" fill="#1A1815"/><circle cx="200" cy="103" r="4" fill="#1A1815"/><circle cx="288" cy="20" r="5" fill="#2D5BE3"/>
+              <text class="v" x="24" y="70" text-anchor="middle">10%</text>
+              <text class="v" x="112" y="102" text-anchor="middle">2%</text>
+              <text class="v" x="204" y="119" text-anchor="middle">4–5%</text>
+              <text class="v vb" x="288" y="10" text-anchor="end">24%</text>
+              <text x="2" y="142" text-anchor="start">до переезда</text>
+              <text x="112" y="142" text-anchor="middle">после</text>
+              <text x="200" y="142" text-anchor="middle">свои IP</text>
+              <text x="288" y="142" text-anchor="end">прогрев</text>
+            </svg>
+            <figcaption>Вся история заняла 9 месяцев.</figcaption>
+          </figure>
+        </article>
+
+        <article class="case">
+          <div>
+            <h3>Минус два месяца рутины в&nbsp;год с&nbsp;помощью&nbsp;ИИ</h3>
+            <dl>
+              <dt>Задача</dt>
+              <dd>Небольшая CRM-команда, два рынка, четыре канала. Значительная часть времени уходила на&nbsp;ручную работу вместо роста.</dd>
+              <dt>Что сделал</dt>
+              <dd>Отчёт по&nbsp;NPS: 2000+ открытых ответов разбирает Claude и&nbsp;собирает дашборд на&nbsp;трёх языках. Заявки коллег на&nbsp;изменение подписок обрабатывает бот на&nbsp;Google Apps Script и&nbsp;Mindbox API. Тексты на&nbsp;двух языках готовит Claude со&nbsp;скиллом, в&nbsp;который упакован tone of voice бренда.</dd>
+              <dt>Результат</dt>
+              <dd><strong>Около двух месяцев рабочего времени в&nbsp;год</strong> вернулись команде, а&nbsp;копирайтер тратит на&nbsp;тексты вдвое меньше времени. Инструменты стоят $20 в&nbsp;месяц.</dd>
+            </dl>
+            <a class="case-link" href="https://cdn.prod.website-files.com/68334fbae0bc0c286a3135bb/6ab47097c1d2ce154b4379cf_13_40%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2_%D0%BC%D0%B8%D0%BD%D1%83%D1%81%20%D1%80%D1%83%D1%82%D0%B8%D0%BD%D0%B0.pdf" target="_blank" rel="noopener">Слайды доклада на&nbsp;WE ARE CRM</a>
+          </div>
+          <figure class="case-aside">
+            <div class="result">2 месяца</div>
+            <div class="result-label">рабочего времени в год</div>
+            <div class="bars" role="img" aria-label="Отчёт по NPS: было 40 часов, стало 2 часа">
+              <div class="bar-row"><span>Отчёт по NPS, было</span><span>40 ч</span><div class="bar" style="width:100%"></div></div>
+              <div class="bar-row"><span>Стало</span><span>2 ч</span><div class="bar after" style="width:5%"></div></div>
+            </div>
+            <div class="aside-photo"><img src="../talk-wearecrm-2026.jpg" alt="Павел Васильев выступает на конференции WE ARE CRM" loading="lazy" width="800" height="600"></div>
+            <figcaption>Рассказывал об этом на&nbsp;конференции WE&nbsp;ARE&nbsp;CRM в&nbsp;августе 2026.</figcaption>
+          </figure>
+        </article>
+
+        <article class="case">
+          <div>
+            <h3>CRM, которая сама защищает свой бюджет</h3>
+            <dl>
+              <dt>Задача</dt>
+              <dd>Руководству нужно было понимать, сколько денег приносит CRM, а&nbsp;не&nbsp;сколько писем отправлено.</dd>
+              <dt>Что сделал</dt>
+              <dd>Построил карту жизненного цикла клиента из&nbsp;9 сегментов, от&nbsp;одобренных без покупки до&nbsp;глубоко спящих. Для каждой цепочки посчитал аплифт через контрольные группы и&nbsp;проверку статистической значимости.</dd>
+              <dt>Результат</dt>
+              <dd><strong>CRM приносит 10–15% выручки компании.</strong> Карта стала основой планирования CRM и&nbsp;аргументом при защите бюджета.</dd>
+            </dl>
+          </div>
+          <figure class="case-aside">
+            <div class="result">10–15%</div>
+            <div class="result-label">выручки через CRM</div>
+            <figcaption>Считаем не открытия и клики, а дополнительные покупки, которых не было бы без цепочки.</figcaption>
+          </figure>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <h2 class="sec-h">Опыт</h2>
+      <div class="jobs">
+        <div class="job">
+          <div class="job-years">2021 — сейчас</div>
+          <div><div class="job-co">Мокка</div><div class="job-role">Head of CRM</div></div>
+          <p>Весь CRM-контур четырёх рынков и&nbsp;базы 20+&nbsp;млн контактов: стратегия и&nbsp;архитектура коммуникаций, выбор платформ, аналитика эффективности, команда из&nbsp;CRM-менеджеров, дизайнеров, копирайтеров, верстальщиков и&nbsp;аналитиков.</p>
+        </div>
+        <div class="job">
+          <div class="job-years">2019 — 2021</div>
+          <div><div class="job-co">Мокка</div><div class="job-role">CRM team lead</div></div>
+          <p>Построил CRM с&nbsp;нуля: от&nbsp;разовых рассылок до&nbsp;25+ триггерных сценариев в&nbsp;четырёх странах. Средний open rate welcome-цепочки — 50%, 85% подписчиков оценивают рассылки на&nbsp;высший балл. Провёл ребрендинг всех коммуникаций после смены названия компании.</p>
+        </div>
+        <div class="job">
+          <div class="job-years">2017 — 2019</div>
+          <div><div class="job-co">БКС</div><div class="job-role">Менеджер по директ-маркетингу</div></div>
+          <p>«БКС Брокер», Fins и&nbsp;«Инвестиции БКС»: с&nbsp;нуля настроил email, SMS и&nbsp;push в&nbsp;Mindbox, автоматизировал триггерную воронку и&nbsp;онбординг.</p>
+        </div>
+        <div class="job">
+          <div class="job-years">2013 — 2017</div>
+          <div><div class="job-co">Out of cloud</div><div class="job-role">Email-маркетолог, агентство</div></div>
+          <p>CRM-маркетинг для Альфа-Банка, Бинбанка, Renault, Puma, OLDI, Concept Club и&nbsp;АльпИндустрии: стратегия и&nbsp;сценарии рассылок, CJM, настройка Mailchimp, Sendsay и&nbsp;Unisender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="help">
+    <div class="wrap">
+      <h2 class="sec-h">Чем могу помочь вашей команде</h2>
+      <p class="sec-sub">Консультирую компании и&nbsp;менторю CRM-специалистов. Все встречи онлайн, напрямую, без площадок-посредников.</p>
+      <div class="help">
+        <div class="help-item"><h3>Аудит CRM и рассылок</h3><p>Разберу, какие цепочки приносят деньги, какие выжигают базу и&nbsp;что стоит выключить.</p></div>
+        <div class="help-item"><h3>Доставляемость</h3><p>Выход из&nbsp;спама, прогрев доменов и&nbsp;IP, переезд на&nbsp;новую платформу без падения open rate.</p></div>
+        <div class="help-item"><h3>Автоматизация и ИИ в CRM-команде</h3><p>Найдём, где команда тратит время на&nbsp;рутину, и&nbsp;посчитаем, сколько можно вернуть.</p></div>
+        <div class="help-item"><h3>Сопровождение и менторство</h3><p>Веду проект на&nbsp;дистанции или помогаю CRM-специалисту вырасти до&nbsp;лида.</p></div>
+      </div>
+      <div class="help-note">
+        <p>Первая встреча бесплатная: знакомимся и&nbsp;разбираем вашу задачу.</p>
+        <a href="#contact" class="btn btn-dark">Записаться на встречу</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="publications">
+    <div class="wrap">
+      <h2 class="sec-h">Публикации и выступления</h2>
+      <ul class="pubs">
+        <li class="pub"><a href="https://cdn.prod.website-files.com/68334fbae0bc0c286a3135bb/6ab47097c1d2ce154b4379cf_13_40%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2_%D0%BC%D0%B8%D0%BD%D1%83%D1%81%20%D1%80%D1%83%D1%82%D0%B8%D0%BD%D0%B0.pdf" target="_blank" rel="noopener"><span class="pub-date">Август 2026</span><span class="pub-where">Конференция WE ARE CRM</span><span class="pub-title">Минус рутина, плюс 2 свободных месяца: доступная автоматизация</span><span class="pub-kind">Доклад, слайды</span></a></li>
+        <li class="pub"><a href="https://mindbox.ru/journal/cases/mokka/" target="_blank" rel="noopener"><span class="pub-date">Июнь 2026</span><span class="pub-where">Mindbox Journal</span><span class="pub-title">Как Мокка вернулась в Inbox Gmail и подняла open rate с 2% до 24%</span><span class="pub-kind">Кейс</span></a></li>
+        <li class="pub"><a href="https://mailfit.com/blog/bolshe-pisem-bolshe-prodazh" target="_blank" rel="noopener"><span class="pub-date">Март 2026</span><span class="pub-where">Mailfit Journal</span><span class="pub-title">Больше писем — больше продаж?</span><span class="pub-kind">Статья</span></a></li>
+        <li class="pub"><a href="https://mailfit.com/blog/kommunikacii-bankov-i-finansovogo-sektora-2026" target="_blank" rel="noopener"><span class="pub-date">Ноябрь 2025</span><span class="pub-where">Mailfit Journal</span><span class="pub-title">Коммуникации банков и финансового сектора в 2026 году</span><span class="pub-kind">Статья</span></a></li>
+        <li class="pub"><a href="https://delovoymir.biz/chto-takoe-triggery-i-kak-ih-ispolzuyut-v-marketinge.html" target="_blank" rel="noopener"><span class="pub-date">Январь 2025</span><span class="pub-where">Деловой мир</span><span class="pub-title">Что такое триггеры и как их используют в маркетинге</span><span class="pub-kind">9 041 просмотр</span></a></li>
+        <li class="pub"><a href="https://secretmag.ru/survival/proshe-perestat-proizvodit-9-potryasenii-rossiiskogo-biznesa-v-2024-godu.htm" target="_blank" rel="noopener"><span class="pub-date">Декабрь 2024</span><span class="pub-where">Секрет Фирмы</span><span class="pub-title">9 потрясений российского бизнеса в 2024 году</span><span class="pub-kind">Комментарий</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap about">
+      <div class="about-photo"><img src="../pavel-about-portrait-2026.jpg" alt="Павел Васильев" loading="lazy"></div>
+      <div>
+        <blockquote>Право на&nbsp;внимание клиента нужно заслуживать, а&nbsp;не&nbsp;покупать частотой отправок.</blockquote>
+        <p>Поэтому каждая гипотеза у&nbsp;меня проходит тест, а&nbsp;решения принимаются по&nbsp;цифрам. Больше всего люблю задачи, где CRM нужно превратить из&nbsp;«отдела рассылок» в&nbsp;систему, которая приносит измеримые деньги.</p>
+        <p>Пишу о&nbsp;CRM-маркетинге в&nbsp;Telegram-канале <a href="https://t.me/utochkirosta" target="_blank" rel="noopener">«У&nbsp;точки роста»</a>, публикуюсь в&nbsp;профильных медиа и&nbsp;выступаю на&nbsp;конференциях.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <h2 class="sec-h">Обсудим вашу задачу</h2>
+      <div class="contact">
+        <div class="contact-direct">
+          <h3>Напишите напрямую или оставьте заявку</h3>
+          <ul class="direct-list">
+            <li><span>Telegram</span><a href="https://t.me/vasilevp" target="_blank" rel="noopener">@vasilevp</a></li>
+            <li><span>Почта</span><a href="mailto:i@pvasilev.ru">i@pvasilev.ru</a></li>
+            <li><span>Телефон</span><a href="tel:+79652508952">+7 965 250-89-52</a></li>
+          </ul>
+          <p>Отвечаю в&nbsp;течение суток в&nbsp;рабочие дни.</p>
+        </div>
+        <form id="lead-form" novalidate>
+          <div class="row2">
+            <label class="f">Имя<input type="text" id="f-name" autocomplete="name" required></label>
+            <label class="f">Telegram или телефон<input type="text" id="f-contact" placeholder="@username или +7…" required></label>
+          </div>
+          <label class="f">Почта, если удобнее<input type="email" id="f-email" autocomplete="email"></label>
+          <label class="f">Что нужно
+            <select id="f-format">
+              <option value="Бесплатная встреча-знакомство">Бесплатная встреча-знакомство</option>
+              <option value="Консультация">Консультация</option>
+              <option value="Аудит коммуникаций">Аудит CRM и рассылок</option>
+              <option value="Сопровождение проекта">Сопровождение проекта</option>
+              <option value="Менторство">Менторство</option>
+              <option value="Предложение о работе">Предложение о работе</option>
+            </select>
+          </label>
+          <label class="f">О задаче<textarea id="f-message" placeholder="Кто вы и какую задачу хотите решить"></textarea></label>
+          <label class="consent" id="consent-label"><input type="checkbox" id="f-consent"> <span>Даю согласие на&nbsp;обработку персональных данных на&nbsp;условиях <a href="privacy.html" target="_blank">политики конфиденциальности</a></span></label>
+          <button type="submit" class="btn btn-dark form-btn" id="form-submit-btn">Отправить заявку</button>
+        </form>
+        <div class="form-done" id="form-done" role="status">
+          <h3>Заявка отправлена</h3>
+          <p>Отвечу в&nbsp;течение суток в&nbsp;рабочие дни.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Павел Васильев</span>
+    <nav aria-label="Контакты">
+      <a href="https://t.me/vasilevp" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:i@pvasilev.ru">i@pvasilev.ru</a>
+      <a href="https://t.me/utochkirosta" target="_blank" rel="noopener">Канал «У точки роста»</a>
+      <a href="privacy.html">Политика конфиденциальности</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwUaVSd9Dq5WsHidld6lvTubfXCOUBDBsXDgKPNcyr5xFRJsy8uVuy0_rNX9cKvArv0/exec';
+  const form = document.getElementById('lead-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const $ = (id) => document.getElementById(id);
+    const name = $('f-name').value.trim();
+    const contact = $('f-contact').value.trim();
+    const consent = $('f-consent').checked;
+    $('f-name').classList.toggle('err', !name);
+    $('f-contact').classList.toggle('err', !contact);
+    $('consent-label').classList.toggle('err', !consent);
+    if (!name || !contact || !consent) return;
+
+    const btn = $('form-submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Отправляю…';
+    const params = new URLSearchParams({
+      name, contact,
+      email: $('f-email').value.trim(),
+      format: $('f-format').value,
+      message: $('f-message').value.trim(),
+      page: location.href,
+      source: 'github-pages-site-new'
+    });
+    try {
+      const res = await fetch(`${FORM_ENDPOINT}?${params.toString()}`, { method: 'GET' });
+      if (!res.ok) throw new Error(res.status);
+      form.style.display = 'none';
+      $('form-done').style.display = 'block';
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Отправить заявку';
+      alert('Заявка не отправилась. Напишите мне в Telegram: @vasilevp');
+    }
+  });
+</script>
+</body>
+</html>
