@@ -316,6 +316,9 @@
   .metric { text-align: right; }
   .metric-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
   .metric-label { font-size: 12px; color: var(--ink-60); margin-top: 3px; }
+  .case-item--photo { grid-template-columns: 220px 1fr auto; }
+  .case-photo { width: 220px; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; background: var(--border); }
+  .case-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
 
   /* ── BRANDS ── */
   .brands-strip {
@@ -579,6 +582,7 @@
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .expertise-grid { grid-template-columns: 1fr; }
     .case-item { grid-template-columns: 1fr; gap: 20px; }
+    .case-photo { width: 100%; aspect-ratio: 16/10; }
     .case-metrics { flex-direction: row; }
     .testimonials-grid { grid-template-columns: 1fr; }
     #about { grid-template-columns: 1fr; gap: 40px; }
@@ -710,7 +714,25 @@
     <h2 class="section-h2">Делюсь знаниями <em>публично</em></h2>
   </div>
   <div class="cases-list">
-    <a href="https://mindbox.ru/journal/cases/mokka/" target="_blank" class="case-item fade-up" style="text-decoration:none;color:inherit;">
+    <a href="https://cdn.prod.website-files.com/68334fbae0bc0c286a3135bb/6ab47097c1d2ce154b4379cf_13_40%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2_%D0%BC%D0%B8%D0%BD%D1%83%D1%81%20%D1%80%D1%83%D1%82%D0%B8%D0%BD%D0%B0.pdf" target="_blank" class="case-item case-item--photo fade-up" style="text-decoration:none;color:inherit;">
+      <div class="case-photo"><img src="talk-wearecrm-2026.jpg" alt="Павел Васильев выступает на конференции WE ARE CRM" loading="lazy" width="800" height="600"></div>
+      <div>
+        <div class="case-tag">WE ARE CRM · АВГУСТ 2026</div>
+        <div class="case-title">Минус рутина, плюс 2&nbsp;свободных месяца: доступная автоматизация</div>
+        <div class="case-desc">Доклад на&nbsp;конференции WE ARE CRM в&nbsp;Рязани. Рассказывал, как CRM-команда Мокка использует ИИ в&nbsp;ежедневной работе, и&nbsp;делился кейсами автоматизации, которые экономят нам 2&nbsp;месяца в&nbsp;год.</div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-num" style="font-size:24px;">2 мес.</div>
+          <div class="metric-label">экономии в год</div>
+        </div>
+        <div class="metric" style="margin-top:8px;">
+          <div style="font-size:13px;color:var(--accent);font-weight:500;">Слайды →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://mindbox.ru/journal/cases/mokka/" target="_blank" class="case-item fade-up" style="text-decoration:none;color:inherit;transition-delay:0.04s">
       <div>
         <div class="case-tag">Mindbox Journal · ИЮНЬ 2026</div>
         <div class="case-title">Как Мокка вернулась в&nbsp;Inbox Gmail и&nbsp;подняла open rate с&nbsp;2% до&nbsp;24%</div>
